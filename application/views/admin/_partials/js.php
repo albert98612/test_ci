@@ -13,14 +13,14 @@
 
 <!-- Page level custom scripts -->
 <!-- <script src="<?php echo base_url('js/demo/chart-area-demo.js') ?>"></script> -->
-<script src="<?php echo base_url('js/demo/chart-pie-demo.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/demo/chart-pie-demo.js"></script>
 <!-- <script src="<?php echo base_url(); ?>js/demo/chart-bar-demo.js"></script> -->
 
 
 <!-- Bar Chart Example -->
 <script type="text/javascript">
     var arr = <?php echo json_encode($arrayBar); ?>;
-    console.log(arr);
+    // console.log(arr);
 	// Set new default font family and font color to mimic Bootstrap's default styling
 	Chart.defaults.global.defaultFontFamily = 'Nunito',
 		'-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
@@ -231,7 +231,7 @@
             padding: 10,
             // Include a dollar sign in the ticks
             callback: function(value, index, values) {
-                return '$' + number_format(value);
+                return 'Rp. ' + number_format(value,0,',','.');
             }
             },
             gridLines: {
@@ -263,7 +263,7 @@
         callbacks: {
             label: function(tooltipItem, chart) {
             var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+            return datasetLabel + ': Rp. ' + number_format(tooltipItem.yLabel,0,',','.');
             }
         }
         }

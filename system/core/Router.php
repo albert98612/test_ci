@@ -37,7 +37,7 @@
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+#[\AllowDynamicProperties]
 /**
  * Router Class
  *
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link		https://codeigniter.com/userguide3/general/routing.html
  */
 class CI_Router {
-
+	public $uri;
 	/**
 	 * CI_Config class object
 	 *
